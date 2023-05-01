@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-page:'Staatliches', cursive;
+  --ff-paragraph:'Palanquin', sans-serif;
+  
+  --bg-header: hsl(218, 17%, 62%);
+  --bg-title: hsla(275, 18%, 79%, 1);
+  --bg-main: hsl(233, 100%, 97%);
+  --bg-cards: hsla(312, 91%, 96%, 1);
+
+
+  font-size: 62.5%;
+  --fs-title: 3rem;
+  --fs-paragraph: 2rem;
+  --fs-body: 2rem;
+
+  --fc-title: hsl(0, 0%, 100%);
+  --fc-paragraph: hsla(274, 84%, 12%, 1);
+  --fc-labels: hsl(232, 17%, 35%);
+
+
+
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  max-width: 40rem;
+  background: var(--bg-main);
+  
+}
+
+header {
+  background: var(--bg-header);
+  height: 280px;
+  align-items:center;
+  
+
+  font-family: var(--ff-page);
+  font-weight: 400;
+  color: var(--fc-title);
+  font-size: var(--fs-title);
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+ 
+  
+}
+
+
+header h1 {
+  text-align: center;
+  font-family: var(--ff-page);
+  font-size: 3rem;
+  background-color: var(--bg-title);
+  width: 100%;
+  
+}
+
+
+header img {
+  align-items: center;
+  margin-top: 3.5rem;
+  margin-left: 8rem;
+  animation: logo;
+  animation-duration: 2s;
+  
+}
+
+main {
+  padding: 3rem 6rem;
+}
+
+main p {
+  font-family: var(--ff-paragraph);
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--fc-paragraph);
+  line-height: 2rem;
+  margin-bottom: 60px;
+
+
+}
+
+.cards {
+  position:relative;
+  animation: downtop;
+  animation-duration: 750ms;
+  animation-delay: 20ms;
+  
+}
+
+.cards img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 3.2rem;
+  transition: transform 200ms;
+
+  
+}
+
+.cards img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(4px 6px 8px rgb(93, 61, 146));
+  
+  
+}
+
+.cards h2 {
+  position: absolute;
+  top: 1.5rem;
+  left: 16rem;
+  font-family: var(--ff-page);
+  color: var(--fc-labels);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  
+  border-radius: 2rem;
+  background: var(--bg-cards);
+  padding: 1rem 2.3rem;
+  height: 35px;
+  display:inline-flex;
+  align-items: center;
+
+  animation: topdown;
+  animation-duration: 750ms;
+  animation-delay: 150ms;
+  
+}
+
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+
+  }
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+
+  }
+}
+
+
+@keyframes logo {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+}
